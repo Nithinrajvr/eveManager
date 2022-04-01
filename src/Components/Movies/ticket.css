@@ -1,0 +1,60 @@
+
+
+
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.ticket {
+	width: 400px;
+	height: 775px;
+	background-color: white;
+	margin: 25px auto;
+	position: relative;
+	border:1px solid #e5e5e5;
+}
+
+.holes-top {
+	height: 25 px;
+	width: 25 px;
+	background-color: Thistle;
+	border-radius: 50%;
+	position: absolute;
+	left:50%;
+	margin-left: (50 / -2) + px;
+	top: (50 / -2) + px;
+
+}
+
+.holes-lower {
+	position: relative;
+	margin:25px;
+	border:1px dashed #aaa;
+
+}
+
+.title {
+	padding: 50px 25px 10px;
+}
+
+.cinema {
+	color: #aaa;
+	font-size: 22px;
+}
+
+.movie-title {
+	font-size: 50px;
+}
+.info {
+	padding: 15px 25px;
+}
+
+.bigger {
+	font-size: 48px;
+}
+.serial {
+	padding: 25px;
+
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/dist/css/adminlte.min.css">
+ 
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/plugins/daterangepicker/daterangepicker.css">
+      
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/styles.css" type="text/css">
+
+    <title>Event Management</title>
+  
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <script src="%PUBLIC_URL%/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="%PUBLIC_URL%/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="%PUBLIC_URL%/assets/dist/js/adminlte.min.js"></script>
+    </body>
+      
+        <script src="%PUBLIC_URL%/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    
+        <script src="%PUBLIC_URL%/assets/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="%PUBLIC_URL%/assets/dist/js/demo.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/styles.css" type="text/css">
+    
+    
+    <script type="text/javascript">
+      $(function() {
+          $('#datetimepicker1').datetimepicker();
+          $('#datetimepicker2').datetimepicker();
+      });
+    
+    
+      
+    </script>
+
+<script>
+
+
+    //initialize datatable
+
+  $(function () {
+    
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+<!-- DataTables  & Plugins -->
+<script src="%PUBLIC_URL%/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/jszip/jszip.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="%PUBLIC_URL%/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> 
+
+<script>
+  $(document).on("click","#print",function(e){
+   e.preventDefault();
+   var table_data=[];
+   var tdata="";
+   var i=0;
+   $('#example1 tbody tr').each(function(row,tr){
+  
+  
+              i=i+1;
+  
+                tdata +="<tr>";
+  
+  
+              if ($(tr).find('td:eq(0)').text()){
+              tdata +="<td>"+$(tr).find('td:eq(0)').text() +"</td>";
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+              if ($(tr).find('td:eq(1)').text()){
+              tdata +="<td>"+$(tr).find('td:eq(1)').text() +"</td>";
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+              if ($(tr).find('td:eq(2)').text()){
+              tdata +='<td align="right">'+$(tr).find('td:eq(2)').text() +'</td>';
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+       if ($(tr).find('td:eq(3)').text()){
+              tdata +='<td align="right">'+$(tr).find('td:eq(3)').text() +'</td>';
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+       if ($(tr).find('td:eq(4)').text()){
+              tdata +='<td align="right">'+$(tr).find('td:eq(4)').text() +'</td>';
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+       if ($(tr).find('td:eq(5)').text()){
+              tdata +='<td align="right">'+$(tr).find('td:eq(5)').text() +'</td>';
+              }else{
+              tdata +="<td></td>"; 
+              }
+  
+  
+  
+              tdata +="</tr>";
+  
+     
+          
+  
+    });
+  
+  
+   $('#printbody').html(tdata);
+                  
+  printDiv('printableArea');
+  
+  });
+  
+  function printDiv(divName) {
+       // var printContents = document.getElementById(divName).innerHTML;
+       // var originalContents = document.body.innerHTML;
+  
+       // document.body.innerHTML = printContents;
+  
+       // window.print();
+       // var data=$('#printableArea').html();
+       // window.close();
+  
+  
+  
+       // document.body.innerHTML = originalContents;
+  
+  var divContents = document.getElementById(divName).innerHTML;
+      // var originalContents = document.body.innerHTML;
+  
+     //  document.body.innerHTML = printContents;
+  
+  
+  //var divContents = document.getElementById("printableArea").innerHTML;  
+         var printWindow = window.open('', '', '');  
+         printWindow.document.write('<html><head><title></title>');
+    printWindow.document.write('<link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/adminlte.min.css">');
+  
+     // printWindow.document.write('<style > #printtable { border-collapse: collapse;} </style>'); 
+  
+         printWindow.document.write('</head><body style="height:98%" >');  
+         printWindow.document.write(divContents);  
+         printWindow.document.write('</body></html>');  
+         printWindow.document.close();  
+         printWindow.print();  
+  
+      printWindow.close();
+  
+  
+  }
+  
+  
+  $(document).on("click","#csvexp",function(e){
+      e.preventDefault();
+                            
+  
+    var table_data=[];
+  var data=[];
+  
+    var dt=[];
+  var sub=new Array();
+  
+  sub[0]="Date";
+  sub[1]="Event";
+  sub[2]="Venue";
+  sub[3]="slots";
+  
+  dt.push(sub);
+  
+      data.push(dt);
+  
+  
+  var i=0;
+  
+    $('#example1 tbody tr').each(function(row,tr){
+  
+  
+  
+  i=i+1;
+    var dt=[];
+  var sub=new Array();
+  sub[0]=$(tr).find('td:eq(0)').text();
+  sub[1]=$(tr).find('td:eq(1)').text();
+  sub[2]=$(tr).find('td:eq(2)').text();
+ 
+  sub[3]=$(tr).find('td:eq(3)').text();
+
+  
+  
+  
+  
+  dt.push(sub);
+  
+      data.push(dt);
+  
+  
+  
+    });
+  //   var data = [
+  //     ['name1', 'city1', 'some other info'],
+  //   ['name2', 'city2', 'more info']
+  // ];
+  console.log(data);
+  
+  
+  
+  // Building the CSV from the Data two-dimensional array
+  // Each column is separated by ";" and new line "\n" for next row
+  var csvContent = '';
+  data.forEach(function(infoArray, index) {
+    dataString = infoArray.join('');
+    csvContent += index < data.length ? dataString + '\n' : dataString;
+  });
+  
+  // The download function takes a CSV string, the filename and mimeType as parameters
+  // Scroll/look down at the bottom of this snippet to see how download is called
+  var download = function(content, fileName, mimeType) {
+    var a = document.createElement('a');
+    mimeType = mimeType || 'application/octet-stream';
+  
+    if (navigator.msSaveBlob) { // IE10
+      navigator.msSaveBlob(new Blob([content], {
+        type: mimeType
+      }), fileName);
+    } else if (URL && 'download' in a) { //html5 A[download]
+      a.href = URL.createObjectURL(new Blob([content], {
+        type: mimeType
+      }));
+      a.setAttribute('download', fileName);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } else {
+      location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
+    }
+  }
+  
+  download(csvContent, 'dashboard.csv', 'text/csv;encoding:utf-8');
+  
+  
+  });
+  
+  
+  </script>
+  <script>
+    $( document ).ready(function() {
+     $('#sdate').datepicker({dateFormat:'dd-mm-yy'});
+                   $( "#sdate" ).datepicker();
+                   var currentDate = new Date();  
+  
+                   currentDate.setMonth(currentDate.getMonth()-1);
+  
+                 //$("#sdate").datepicker("setDate",currentDate);
+               
+              
+  
+                 // $('#sdate').val=currentDate;
+  
+  
+     $('#edate').datepicker({dateFormat:'dd-mm-yy'});
+                   $( "#edate" ).datepicker();
+                   var currentDate = new Date();  
+              //    $("#edate").datepicker("setDate",currentDate);
+               //   $('#edate').val=currentDate;
+  
+  
+  
+  
+  
+  
+  
+  
+    });</script>
+  
+  
+
+  </body>
+</html>
